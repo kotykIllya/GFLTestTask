@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Search page result less than:</h1>
+<div>
+    <form th:action="@{/index/searchLessThan/}" >
+        <div>
+            <input type="text" name="query" placeholder="Search Less Than">
+        </div>
+        <button type="submit">Search</button>
+    </form>
+    <div style="margin: 20px" th:each="expression : ${expressions}">
+        <div>
+            <span style="font-size: 25px" th:text="${expression.fullExpression}"></span>
+            <span style="font-size: 25px">=</span>
+            <span style="font-size: 25px" th:text="${expression.result}"></span>
+        </div>
+    </div>
+    <div><a th:href="@{/index}"><button type="button">Home</button></a></div>
+</div>
+</body>
+</html>

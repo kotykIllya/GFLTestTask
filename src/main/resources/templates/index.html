@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+</head>
+<body>
+<h1>Enter your sentence:</h1>
+<form th:action="@{/index/saveExpression}" method="post">
+    <div>
+        <input type="text" name="expression" placeholder="Expression">
+    </div>
+    <button type="submit" >Submit</button>
+</form>
+<div><a th:href="@{/searchPageExactResult}"><button type="button">Search By Exact Result</button></a></div>
+<div><a th:href="@{/searchPageBiggerThan}"><button type="button">Search Bigger Than</button></a></div>
+<div><a th:href="@{/searchPageLessThan}"><button type="button">Search Less Than</button></a></div>
+</body>
+</html>
